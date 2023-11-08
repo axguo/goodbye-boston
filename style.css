@@ -1,0 +1,50 @@
+html, body {
+    background-color: rgb(221, 199, 213);
+    color: rgb(147, 14, 14);
+    font-family: 'Fanwood Text', serif;
+    font-size: 20px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+#poem-title {
+    font-size: 25px;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.poem {
+    margin: 60px auto 100px;
+    width: 55%;
+}
+
+.highlight {
+  cursor: pointer;
+  /* border-bottom: 1px dotted blue;  */
+}
+
+.popup-image {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 70vw;
+  max-height: 80vh;
+  display: none;
+  pointer-events: none;
+}
+
+#poem-title-popup {
+  display: none; 
+  position: absolute;
+  left: auto;
+  right: auto; 
+  max-width: 600px;
+  margin: 0 auto;
+  background: #d4d8f7;
+  padding: 10px;
+  font-size: 16px;
+  font-style:italic;
+}
