@@ -1,18 +1,18 @@
-// Get highlight elements
-const highlights = document.querySelectorAll('.highlight');
+// Get picture elements
+const pictures = document.querySelectorAll('.picture');
 
 const shuffle = (array) => {
     return array.sort(() => Math.random() - 0.5);
 }; 
 
 // Create image elements  
-highlights.forEach(highlight => {
+pictures.forEach(picture => {
 
-    // Get image URLs for this highlight
-    const highlightImages = shuffle(highlight.getAttribute('data-images').split(','));
+    // Get image URLs for this picture
+    const pictureImages = shuffle(picture.getAttribute('data-images').split(','));
 
     // Create image elements
-    highlightImages.forEach(url => {
+    pictureImages.forEach(url => {
         const img = document.createElement('img');
         img.src = `images/${url}`;
         img.id = url;
@@ -23,22 +23,22 @@ highlights.forEach(highlight => {
 
     // Tracking for cycling through images
     let currentImageInd = 0;
-    let currentImage = document.getElementById(highlightImages[currentImageInd]);
+    let currentImage = document.getElementById(pictureImages[currentImageInd]);
 
     // Show next image on hover
-    highlight.addEventListener('mouseenter', () => {
+    picture.addEventListener('mouseenter', () => {
         currentImage.style.display = 'block';
     });
 
     // Hide image on hover out
-    highlight.addEventListener('mouseleave', () => {
+    picture.addEventListener('mouseleave', () => {
         currentImage.style.display = 'none';
 
         currentImageInd++;
-        if (currentImageInd >= highlightImages.length) {
+        if (currentImageInd >= pictureImages.length) {
             currentImageInd = 0;
         }
-        currentImage = document.getElementById(highlightImages[currentImageInd]);
+        currentImage = document.getElementById(pictureImages[currentImageInd]);
     });
 
 });
