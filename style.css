@@ -18,6 +18,7 @@ p {
 .poem {
     margin: 60px auto 100px;
     width: 55%;
+    user-select: none; 
 }
 
 .picture {
