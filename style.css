@@ -23,7 +23,7 @@ p {
 
 .picture {
   cursor: pointer;
-  /* border-bottom: 1px dotted blue;  */
+  
 }
 
 .popup-image {
@@ -63,6 +63,12 @@ p {
 @media (min-width: 400px) and (max-width: 800px) {
   .poem {
     width: 90%;
+  }
+}
+
+@media (hover: none) {
+  .picture {
+    border-bottom: 2px dotted rgb(179, 128, 128); 
   }
 }
 
