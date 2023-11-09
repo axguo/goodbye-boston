@@ -53,24 +53,13 @@ pictures.forEach(picture => {
                 currentImageInd = 0;
             }
             currentImage = document.getElementById(pictureImages[currentImageInd]);
-            tapped = false
+            tapped = false;
         }
         else {
             currentImage.style.display = 'block';
+            tapped = true;
         }
     });
-
-    // // Hide on touch end 
-    // picture.addEventListener('touchend', () => {
-    //     currentImage.style.display = 'none';
-
-    //     currentImageInd++;
-    //     if (currentImageInd >= pictureImages.length) {
-    //         currentImageInd = 0;
-    //     }
-    //     currentImage = document.getElementById(pictureImages[currentImageInd]);
-    // });
-
 });
 
 
@@ -85,8 +74,16 @@ title.addEventListener("mouseout", function () {
     popup.style.display = "none";
 });
 
-title.addEventListener("touchstart", function () {
-    popup.style.display = "block";
+title.addEventListener("tap", function () {
+    if (tapped) {
+        popup.style.display = "none";
+        tapped = false;
+    }
+    else {
+        popup.style.display = "block";
+        tapped = true;
+    }
+    
 });
 
 title.addEventListener("touchend", function () {
