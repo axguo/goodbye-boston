@@ -1,3 +1,5 @@
+let tapped = false;
+
 // Get picture elements
 const pictures = document.querySelectorAll('.picture');
 
@@ -42,20 +44,32 @@ pictures.forEach(picture => {
     });
 
     // Show on touch start
-    picture.addEventListener('touchstart', () => {
-        currentImage.style.display = 'block';
-    });
+    picture.addEventListener('tap', () => {
+        if (tapped) {
+            currentImage.style.display = 'none';
 
-    // Hide on touch end 
-    picture.addEventListener('touchend', () => {
-        currentImage.style.display = 'none';
-
-        currentImageInd++;
-        if (currentImageInd >= pictureImages.length) {
-            currentImageInd = 0;
+            currentImageInd++;
+            if (currentImageInd >= pictureImages.length) {
+                currentImageInd = 0;
+            }
+            currentImage = document.getElementById(pictureImages[currentImageInd]);
+            tapped = false
         }
-        currentImage = document.getElementById(pictureImages[currentImageInd]);
+        else {
+            currentImage.style.display = 'block';
+        }
     });
+
+    // // Hide on touch end 
+    // picture.addEventListener('touchend', () => {
+    //     currentImage.style.display = 'none';
+
+    //     currentImageInd++;
+    //     if (currentImageInd >= pictureImages.length) {
+    //         currentImageInd = 0;
+    //     }
+    //     currentImage = document.getElementById(pictureImages[currentImageInd]);
+    // });
 
 });
 
@@ -71,7 +85,7 @@ title.addEventListener("mouseout", function () {
     popup.style.display = "none";
 });
 
-title.addEventListener("tap", function () {
+title.addEventListener("touchstart", function () {
     popup.style.display = "block";
 });
 
