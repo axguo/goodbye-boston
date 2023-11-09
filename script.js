@@ -41,6 +41,22 @@ pictures.forEach(picture => {
         currentImage = document.getElementById(pictureImages[currentImageInd]);
     });
 
+    // Show on touch start
+    picture.addEventListener('touchstart', () => {
+        currentImage.style.display = 'block';
+    });
+
+    // Hide on touch end 
+    picture.addEventListener('touchend', () => {
+        currentImage.style.display = 'none';
+
+        currentImageInd++;
+        if (currentImageInd >= pictureImages.length) {
+            currentImageInd = 0;
+        }
+        currentImage = document.getElementById(pictureImages[currentImageInd]);
+    });
+
 });
 
 

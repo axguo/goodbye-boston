@@ -1,6 +1,6 @@
 html, body {
-    background-color: rgb(221, 199, 213);
-    color: rgb(97, 1, 1);
+    background-color: rgb(142 64 64);
+    color: rgb(251 231 241);
     font-family: 'Fanwood Text', serif;
     font-size: 20px;
 }
@@ -42,11 +42,12 @@ p {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
   background: #fef9ff;
-  padding: 10px;
+  padding: 25px;
   font-size: 18px;
   font-style:italic;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  color: rgb(142 64 64);
 }
