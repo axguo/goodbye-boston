@@ -70,3 +70,16 @@ title.addEventListener("mouseover", function () {
 title.addEventListener("mouseout", function () {
     popup.style.display = "none";
 });
+
+title.addEventListener("touchstart", function () {
+    popup.style.display = "block";
+});
+
+title.addEventListener("touchend", function () {
+    popup.style.display = "none";
+});
+
+
+element.addEventListener('touchmove', e => {
+    e.preventDefault();
+});
