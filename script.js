@@ -71,7 +71,7 @@ title.addEventListener("mouseout", function () {
     popup.style.display = "none";
 });
 
-title.addEventListener("touchstart", function () {
+title.addEventListener("tap", function () {
     popup.style.display = "block";
 });
 
@@ -79,7 +79,6 @@ title.addEventListener("touchend", function () {
     popup.style.display = "none";
 });
 
-
-element.addEventListener('touchmove', e => {
+title.addEventListener('touchmove', e => {
     e.preventDefault();
 });
