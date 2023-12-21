@@ -14,14 +14,14 @@ pictures.forEach(picture => {
     const pictureImages = shuffle(picture.getAttribute('data-images').split(','));
 
     // Create image elements
-    pictureImages.forEach(url => {
-        const img = document.createElement('img');
-        img.src = `images/${url}`;
-        img.id = url;
-        img.style.position = 'fixed';
-        img.classList.add('popup-image');
-        document.body.appendChild(img);
-    });
+    // pictureImages.forEach(url => {
+    //     const img = document.createElement('img');
+    //     img.src = `images/${url}`;
+    //     img.id = url;
+    //     img.style.position = 'fixed';
+    //     img.classList.add('popup-image');
+    //     document.body.appendChild(img);
+    // });
 
     // Tracking for cycling through images
     let currentImageInd = 0;
